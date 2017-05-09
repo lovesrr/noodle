@@ -26,6 +26,11 @@ func exec(w http.ResponseWriter,r *http.Request){
 		fmt.Println(inputs)
 		rs = logic.Maopao(inputs)
 	}
+	if path == "kuaipai"{
+		fmt.Println(inputs)
+		logic.Kuaipai(inputs,0,len(inputs)-1)
+		rs = inputs
+	}
 	fmt.Fprintln(w,"result is ",rs)
 }
 func main(){
